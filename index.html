@@ -11,6 +11,7 @@
     </head>
     <body>
         <div><img src="bussola1.png"/></div>
+        <button onclick='requestOrientationPermission();'>Request orientation permission</button>
         
         <script>
             var div = document.getElementsByTagName("div")[0];
@@ -28,6 +29,18 @@
             window.addEventListener('touchstart', function(evt) {
                 img.src = "bussola" + evt.touches.length + ".png";
             }, false);
+
+            function requestOrientationPermission(){
+        DeviceOrientationEvent.requestPermission()
+        .then(response => {
+            if (response == 'granted') {
+                window.addEventListener('deviceorientation', (e) => {
+                    // do something with e
+                })
+            }
+        })
+        .catch(console.error)
+    }
         </script>
     </body>
 </html>
