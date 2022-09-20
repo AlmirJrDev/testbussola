@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+
+body { 
+    overflow-x: hidden;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(2,16,1,1) 37%, rgba(11,101,7,1) 100%);
+    background-repeat: no-repeat;
+}
+
+header{
+    height: 17rem;
+}
+
+.container { 
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.logo{
+    width: 100vw;
+}
+
+.bussola-fundo{
+    width: 40vw;
+}
+
+.agulha{
+    margin: 35px auto auto 5px;
+    position: absolute;
+    width: calc(10vw)
+}
+
+
+button{
+    width: 100px;
+}
+

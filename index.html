@@ -2,45 +2,27 @@
     <head>
         <meta charset="utf-8"/>
         <title>Bussola</title>
+        <link rel="stylesheet" href="style.css">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width, user-scalable=no"/>
-        <style>
-            html,body { margin: 0; padding: 0; height: 100% }
-            div { min-height: 100%;}
-            img { position: absolute; top: 50%; left: 50%; margin: -160px}
-        </style>
+        
     </head>
     <body>
-        <div><img src="bussola1.png"/></div>
-        <button onclick='requestOrientationPermission();'>Request orientation permission</button>
+        <header>
+            <img class="logo" src="./assents/3.png" alt="">
+        </header>
+        <main class="container">
+            
+            <img class="bussola-fundo" src="/assents/5.png"/>
+            <img class="agulha" src="/assents/bussola1.png" alt="">
+          
         
-        <script>
-            var div = document.getElementsByTagName("div")[0];
-            var img = div.childNodes[0];
-            
-            if (window.DeviceOrientationEvent) {
-                window.addEventListener("deviceorientation", function(evt) {
-                    img.style.webkitTransform = "rotateZ(" + evt.alpha + "deg)";
-                    img.style.transform = "rotateZ(" + evt.alpha + "deg)";
-                }, false);
-            } else {
-                alert("Teu browser é desorientado, vei. Taca fogo nele!");
-            }
-            
-            window.addEventListener('touchstart', function(evt) {
-                img.src = "bussola" + evt.touches.length + ".png";
-            }, false);
+        </main>
 
-            function requestOrientationPermission(){
-        DeviceOrientationEvent.requestPermission()
-        .then(response => {
-            if (response == 'granted') {
-                window.addEventListener('deviceorientation', (e) => {
-                    // do something with e
-                })
-            }
-        })
-        .catch(console.error)
-    }
-        </script>
+        <button onclick='requestOrientationPermission();'>Request orientation permission</button>
+       
+        
+      
+        
     </body>
+    <script src="./script.js"></script>
 </html>
