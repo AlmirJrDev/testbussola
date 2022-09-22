@@ -10,19 +10,29 @@
         <header>
             <img class="logo" src="./assents/3.png" alt="">
         </header>
-        <main class="container">
-            
-            <img class="bussola-fundo" src="/assents/5.png"/>
-            <img class="agulha" src="/assents/bussola1.png" alt="">
-          
-        
-        </main>
 
-        <button onclick='requestOrientationPermission();'>Request orientation permission</button>
+        <main class="container">
+               <div id="myDiv">
+            <h2>Antes de entrar, precisamos da sua permissão para usar a orientação do seu celular para podemos fazer a magica :D</h2>
+            <button id="config" onclick='requestOrientationPermission()'>Request orientation permission</button>
+        </div>
+        <img class="agulha" src="/assents/bussola1.png" alt="">
+            <img class="bussola-fundo" src="/assents/bussola.png"/>
+            
+            
+
+        </main>
+        <section>
+            <div id="timer"></div>
+        </section>
+                
+     
+
+
        
         
       
         
     </body>
-    <script src="./script.js"></script>
+    <script defer src="./script.js"></script>
 </html>

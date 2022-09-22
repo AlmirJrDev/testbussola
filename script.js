@@ -7,21 +7,38 @@ if (window.DeviceOrientationEvent) {
         img.style.transform = "rotateZ(" + evt.alpha + "deg)";
     }, false);
 } else {
-    alert("Teu browser é desorientado, vei. Taca fogo nele!");
+    window.alert("Teu browser é desorientado, vei. Taca fogo nele!");
 }
 
 window.addEventListener('touchstart', function(evt) {
     img.src = "bussola" + evt.touches.length + ".png";
 }, false);
 
-function requestOrientationPermission(){
+var confirm = document.getElementById("confirmation");
+
+function requestOrientationPermission()
 DeviceOrientationEvent.requestPermission()
 .then(response => {
 if (response == 'granted') {
+    document.getElementById("confimation").style.display="none"
     window.addEventListener('deviceorientation', (e) => {
-        // do something with e
+       
+        
     })
-}
-})
-.catch(console.error)
-}
+    
+}})
+
+.catch(document.getElementById("config").style.display="none")
+
+////////////////////////
+
+ 
+function  requestOrientationPermission() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
