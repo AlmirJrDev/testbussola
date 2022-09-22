@@ -1,4 +1,4 @@
-var div = document.getElementsByTagName("div")[0];
+var div = document.getElementsByClassName("bussola-fundo")[0];
 var img = div.childNodes[0];
 
 if (window.DeviceOrientationEvent) {
