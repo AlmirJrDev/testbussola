@@ -7,10 +7,9 @@ if (window.DeviceOrientationEvent) {
         img.style.transform = "rotateZ(" + evt.alpha + "deg)";
     }, false);
 } else {
-    window.alert("Teu browser é desorientado, vei. Taca fogo nele!");
+    alert("Teu browser é desorientado, vei. Taca fogo nele!");
 }
 
-
-
-
-////////////////////////
+window.addEventListener('touchstart', function(evt) {
+    img.src = "bussola" + evt.touches.length + ".png";
+}, false);
